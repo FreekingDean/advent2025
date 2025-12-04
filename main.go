@@ -9,6 +9,7 @@ import (
 	"github.com/FreekingDean/advent2025/day1"
 	"github.com/FreekingDean/advent2025/day2"
 	"github.com/FreekingDean/advent2025/day3"
+	"github.com/FreekingDean/advent2025/day4"
 
 	"github.com/FreekingDean/advent2025/utils"
 )
@@ -19,6 +20,7 @@ var days = map[string]SolveFunc{
 	"day1": day1.Solve,
 	"day2": day2.Solve,
 	"day3": day3.Solve,
+	"day4": day4.Solve,
 }
 
 func main() {

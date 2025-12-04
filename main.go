@@ -7,14 +7,16 @@ import (
 	"path"
 
 	"github.com/FreekingDean/advent2025/day1"
+	"github.com/FreekingDean/advent2025/day2"
 
 	"github.com/FreekingDean/advent2025/utils"
 )
 
-type SolveFunc func(input string) (string, error)
+type SolveFunc func(input string) (string, string, error)
 
 var days = map[string]SolveFunc{
 	"day1": day1.Solve,
+	"day2": day2.Solve,
 }
 
 func main() {
@@ -32,12 +34,13 @@ func main() {
 
 	solveFunc, ok := days[day]
 	if !ok {
-		log.Fatalf("no solve function for day '%s'", day)
+		log.Fatalf("no solve function for '%s'", day)
 	}
 
-	solution, err := solveFunc(input)
+	part1, part2, err := solveFunc(input)
 	if err != nil {
-		log.Fatalf("error solving day '%s': %s", day, err)
+		log.Fatalf("error solving '%s': %s", day, err)
 	}
-	fmt.Printf("Solution for day %s:\n====================\n%s\n", day, solution)
+	fmt.Printf("Solution for %s part1:\n====================\n%s\n\n", day, part1)
+	fmt.Printf("Solution for %s part2:\n====================\n%s\n\n", day, part2)
 }
